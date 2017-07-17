@@ -68,7 +68,7 @@ var Main = React.createClass({
           <div className="jumbotron">
             <h2 className="text-center">New York Times Article Search</h2>
             <p className="text-center">
-              <em>Enter a topic to search NYT API.</em>
+              <em>Enter a topic to search NYT API. Hello w</em>
             </p>
           </div>
 
@@ -82,9 +82,11 @@ var Main = React.createClass({
 
           <div className="col-md-6">
 
-            <Results 
-              articles={this.state.results} 
+            { !this.state.results
+              ? <p> Please Wait...</p>
+              : <Results articles={this.state.results} 
             />
+            }
 
           </div>
 
